@@ -31,3 +31,8 @@ class TicTacRoyale:
     def getPawn(self, location: locMod.Location) -> pawnMod.Pawn:
         return self.pawns.getPawn(self.pawns)
 
+    def addPawn(self, pawn: pawnMod.Pawn):
+        if self.hasPawn(pawn.getLocation()):
+            raise Exception("Location already used")
+        self.addPawn(pawn)
+
