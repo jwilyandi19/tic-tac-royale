@@ -24,3 +24,6 @@ class Room:
 
     def isPawnAvailable(self, pawn: pawnMod.PawnType) -> bool:
         return pawn in self.availableSpot
+
+    def getPawns(self) -> typ.Sequence[pawnMod.Pawn]:
+        return self.pawns
