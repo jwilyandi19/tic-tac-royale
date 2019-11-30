@@ -2,7 +2,7 @@ import server.domain.model.pawn as pawnMod
 import typing as typ
 
 class Room:
-    def __init__(self, code: str):
+    def __init__(self, code: int):
         self.code = code
         self.availableSpot = [pawnMod.PawnType.X, pawnMod.PawnType.O]
         self.pawns = typ.Sequence[pawnMod.Pawn]()
@@ -10,7 +10,7 @@ class Room:
     def addPawn(self, pawn: pawnMod.Pawn):
         self.pawns.append(pawn)
 
-    def getCode(self) -> str:
+    def getCode(self) -> int:
         return self.code
 
     def getAvailableSpot(self) -> pawnMod.PawnType:
@@ -22,7 +22,7 @@ class Room:
     def addAvailableSpot(self, pawn: pawnMod.PawnType):
         self.availableSpot.append(pawn)
 
-    def isPawnAvailable(self, pawn: pawnMod.PawnType) -> bool:
+    def isSpotAvailable(self, pawn: pawnMod.PawnType) -> bool:
         return pawn in self.availableSpot
 
     def getPawns(self) -> typ.Sequence[pawnMod.Pawn]:
