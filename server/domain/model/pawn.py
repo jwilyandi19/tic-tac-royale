@@ -10,5 +10,8 @@ class Pawn:
         self.type = PawnType
         self.location = location
     
-    def GetType(self) -> PawnType:
+    def getType(self) -> PawnType:
         return self.type
+
+    def getLocation(self) -> locMod.Location:
+        return self.location
