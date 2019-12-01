@@ -8,7 +8,7 @@ class CreateRoom:
         self.tictactoe = ticTacToe
         self.lock = lock
 
-    def Create(self) -> roomMod.Room:
+    def execute(self) -> roomMod.Room:
         self.lock.acquire()
         room = self.tictactoe.createRoom()
         self.lock.release()

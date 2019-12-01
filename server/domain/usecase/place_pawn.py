@@ -14,14 +14,10 @@ class PlacePawn:
         location = locMod.Location(x_coord,y_coord)
         room = tictactoe.findRoom(code)
         pawn_type = room.getAvailableSpot()
-
         self.lock.acquire()
         pawn = pawnMod.Pawn(pawn_type,location)
-        if(not tictactoe.hasPawn(location)):
-            room.addPawn(pawn)
-            self.lock.release()
-        else:
-            self.lock.release()
+        tictactoe.addPawn(pawn)
+        self.lock.release()
         
 
 
