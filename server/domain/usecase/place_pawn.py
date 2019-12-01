@@ -10,7 +10,7 @@ class PlacePawn:
         self.tictactoe = ticTacToe
         self.lock = lock
 
-    def execute(self,x_coord,y_coord,code):
+    def Place(self,x_coord,y_coord,code):
         location = locMod.Location(x_coord,y_coord)
         room = tictactoe.findRoom(code)
         pawn_type = room.getAvailableSpot()

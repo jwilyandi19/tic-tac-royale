@@ -9,7 +9,7 @@ class ListPawnByRoom:
     def __init__(self, ticTacToe: tttMod.TicTacRoyale):
         self.tictactoe = ticTacToe
 
-    def execute(self,code) -> typ.Sequence[pawnMod.Pawn]:
+    def ListByRoom(self,code) -> typ.Sequence[pawnMod.Pawn]:
         room = self.tictactoe.findRoom(code)
         pawns = room.Room.getPawns()
 

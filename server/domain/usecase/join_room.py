@@ -8,7 +8,7 @@ class JoinRoom():
         self.tictactoe = ticTacToe
         self.lock = lock
 
-    def execute(self, code):
+    def Join(self, code):
         self.lock.acquire()
         room = self.tictactoe.findRoom(code)
         pawn_type = room.getAvailableSpot()
