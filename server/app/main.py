@@ -1,6 +1,7 @@
 import server.app.server as serverMod
 import server.app.tictacservice as tttService
 import Pyro4
+import json
 
 class TicTacToeServer:
     def __init__(self, host, port, identifier="main-"):
@@ -12,31 +13,37 @@ class TicTacToeServer:
 
     def Create(self):
         try:
-            room = self.tttService.Create()
+            response = self.tttService.Create()
             return {
-                "data": room
+                "data": response
             }
         except Exception as e:
             return self.handleError(e)
     
     def Join(self,code):
         try:
-            self.tttService.Join(code)
+            response = self.tttService.Join(code)
+            return {
+                "data": response
+            }
         except Exception as e:
             return self.handleError(e)
     
     def ListByRoom(self,code):
         try:
-            pawns = self.tttService.ListByRoom(code)
+            response = self.tttService.ListByRoom(code)
             return {
-                "data": pawns
+                "data": response
             }
         except Exception as e:
             return self.handleError(e)
     
     def Place(self,x_coord,y_coord,code):
         try:
-            self.tttService.Place(x_coord,y_coord,code)
+            response = self.tttService.Place(x_coord,y_coord,code)
+            return {
+                "data": response
+            }
         except Exception as e:
             return self.handleError(e)
     

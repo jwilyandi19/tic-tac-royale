@@ -21,6 +21,7 @@ class TicTacService():
     
     def Join(self, code):
         self.join_room.Join(code)
+        return "OK"
     
     def ListByRoom(self,code):
         pawns = self.list_pawn_by_room.ListByRoom(code)
@@ -28,6 +29,7 @@ class TicTacService():
     
     def Place(self,x_coord,y_coord,code):
         self.place_pawn.Place(x_coord,y_coord,code)
+        return "OK"
     
 
 
