@@ -12,6 +12,22 @@ class TicTacToeClient:
         self.client = clientMod.Client(host, port, identifier)
         self.client.Start(["TicTacToeServer"])
         self.server = self.client.GetObject("TicTacToeServer")
+    
+    def Create(self):
+        response = self.server.Create()
+        return response
+    
+    def Join(self,code):
+        response = self.server.Join(code)
+        return response
+    
+    def ListByRoom(self,code):
+        response = self.server.ListByRoom(code)
+        return response
+    
+    def Place(self,x_coord,y_coord,code):
+        response = self.server.Place(x_coord,y_coord,code)
+        return response
 
 def RunGUI():
     root = tki.Tk()
