@@ -38,6 +38,7 @@ class CreateRoom(baseMod.IBase):
 
     def show(self):
         self.frame.grid()
+        self.stack.pushNamed("BoardPlayer")
 
     def hide(self):
         self.frame.grid_remove()
