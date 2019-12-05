@@ -5,6 +5,8 @@ import client.frame.join_room as fJoinRoomMod
 import client.asset.font as fontMod
 import client.frame.stack as stackMod
 import client.client as clientMod
+import client.frame.board_player as fBoardPlayer
+
 
 class TicTacToeClient:
 
@@ -38,6 +40,7 @@ def RunGUI():
     home = fHomeMod.Home(stackFrame)
     fCreateRoomMod.CreateRoom(stackFrame)
     fJoinRoomMod.JoinRoom(stackFrame)
+    fBoardPlayer.BoardPlayer(stackFrame)
     stackFrame.push(home)
     root.mainloop()
 

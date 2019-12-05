@@ -5,7 +5,7 @@ class Room:
     def __init__(self, code: int):
         self.code = code
         self.availableSpot = [pawnMod.PawnType.X, pawnMod.PawnType.O]
-        self.pawns = typ.Sequence[pawnMod.Pawn]()
+        self.pawns : typ.Sequence[pawnMod.Pawn] = list()
 
     def addPawn(self, pawn: pawnMod.Pawn):
         self.pawns.append(pawn)
